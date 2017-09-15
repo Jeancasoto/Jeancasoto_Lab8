@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -211,6 +212,12 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel100 = new javax.swing.JLabel();
+        Pelea = new javax.swing.JDialog();
+        jLabel101 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabla_luchadoras = new javax.swing.JTable();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -1386,12 +1393,78 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
+        jLabel101.setFont(new java.awt.Font("Marker Felt", 3, 36)); // NOI18N
+        jLabel101.setText("Seleccione luchadoras");
+
+        tabla_luchadoras.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre"
+            }
+        ));
+        jScrollPane3.setViewportView(tabla_luchadoras);
+
+        jButton9.setText("Seleccionar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
+        jButton10.setText("Cargar tabla");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PeleaLayout = new javax.swing.GroupLayout(Pelea.getContentPane());
+        Pelea.getContentPane().setLayout(PeleaLayout);
+        PeleaLayout.setHorizontalGroup(
+            PeleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PeleaLayout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PeleaLayout.createSequentialGroup()
+                .addContainerGap(102, Short.MAX_VALUE)
+                .addGroup(PeleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PeleaLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PeleaLayout.createSequentialGroup()
+                        .addComponent(jButton10)
+                        .addGap(91, 91, 91)
+                        .addComponent(jButton9)
+                        .addGap(189, 189, 189))))
+        );
+        PeleaLayout.setVerticalGroup(
+            PeleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PeleaLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel101)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PeleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton9)
+                    .addComponent(jButton10))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Chalkduster", 3, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 255, 51));
         jLabel3.setText("Simular pelea");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 210, 40));
 
         jLabel4.setFont(new java.awt.Font("Chalkduster", 3, 24)); // NOI18N
@@ -1659,6 +1732,33 @@ public class Principal extends javax.swing.JFrame {
         About.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+     DefaultTableModel model=  (DefaultTableModel)tabla_luchadoras.getModel();
+        for (Hada hada : ap.getlistahadas()) {
+            Object [] m={hada.getNombre()};
+            model.addRow(m);
+           
+        }
+         tabla_luchadoras.setModel(model);
+      
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+         Pelea.setModal(true);
+        Pelea.pack();
+        Pelea.setLocationRelativeTo(this);
+        Pelea.setVisible(true);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        int r = tabla_luchadoras.getSelectedRow();
+        tabla_luchadoras.getValueAt(r, 0);
+        
+    }//GEN-LAST:event_jButton9MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1698,8 +1798,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog About;
     private javax.swing.JDialog Eliminar;
     private javax.swing.JDialog Modificar;
+    private javax.swing.JDialog Pelea;
     private javax.swing.JDialog agregar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1707,6 +1809,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
@@ -1714,6 +1817,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1828,6 +1932,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSpinner jSpinner10;
     private javax.swing.JSpinner jSpinner11;
     private javax.swing.JSpinner jSpinner12;
@@ -1866,6 +1971,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSpinner sp_altura_4;
     private javax.swing.JSpinner sp_branquias_1;
     private javax.swing.JTextField sp_edad_3;
+    private javax.swing.JTable tabla_luchadoras;
     private javax.swing.JTextField tf_aleta_1;
     private javax.swing.JTextField tf_arbol_2;
     private javax.swing.JTextField tf_edad_1;
