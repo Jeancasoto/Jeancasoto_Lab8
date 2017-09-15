@@ -207,6 +207,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel90 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
         jLabel89 = new javax.swing.JLabel();
+        About = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel100 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -218,6 +222,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         agregar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -243,6 +248,11 @@ public class Principal extends javax.swing.JFrame {
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -1343,6 +1353,39 @@ public class Principal extends javax.swing.JFrame {
         jLabel89.setIcon(new javax.swing.ImageIcon("/Users/jeansoto/Downloads/e46e440d1c4fce25f46be79704ad6784--cat-wallpaper-alice-in-wonderland.jpg")); // NOI18N
         Eliminar.getContentPane().add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 640));
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Este programa se basa en la historia del pais de nunca jamas , donde \nexistian diversos tipos de hadas entre ellos:\nSalamandras\nSifides\nHamadriades\nLamias\nDonde disputaban pelea por territorio en las noches , en un bar de la\ngran cuidad, que las peleas eran ilegales, pero por la lucha de territorio y \nse rumoraba la lucha por las drogas, todas las noches, habia una \ndistinta ganadora .");
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jLabel100.setFont(new java.awt.Font("Papyrus", 3, 36)); // NOI18N
+        jLabel100.setText("About");
+
+        javax.swing.GroupLayout AboutLayout = new javax.swing.GroupLayout(About.getContentPane());
+        About.getContentPane().setLayout(AboutLayout);
+        AboutLayout.setHorizontalGroup(
+            AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AboutLayout.createSequentialGroup()
+                .addContainerGap(73, Short.MAX_VALUE)
+                .addGroup(AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AboutLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AboutLayout.createSequentialGroup()
+                        .addComponent(jLabel100)
+                        .addGap(248, 248, 248))))
+        );
+        AboutLayout.setVerticalGroup(
+            AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AboutLayout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addComponent(jLabel100)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(78, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1386,6 +1429,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu1.setText("Opciones");
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Abrir");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1394,6 +1438,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setText("Guardar");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1402,6 +1447,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem2);
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setText("Guardar como");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1410,6 +1456,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setText("Salir");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1417,6 +1464,15 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem4);
+
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setText("About");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
 
@@ -1435,17 +1491,24 @@ public class Principal extends javax.swing.JFrame {
             path = f.getPath();
             try {
                 ap.cargarArchivo();
-                hadas =ap.getlistahadas();
+                hadas = ap.getlistahadas();
+                JOptionPane.showMessageDialog(this, "Guardado con exito");
             } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Ocurrio un error");
             }
-            
+
         }
-        
+
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-         agregar.setModal(true);
+
+        for (Hada t1 : ap.getlistahadas()) {
+            System.out.println(t1.getAltura());
+        }
+        agregar.setModal(true);
         agregar.pack();
         agregar.setLocationRelativeTo(this);
         agregar.setVisible(true);
@@ -1462,7 +1525,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-             Eliminar.setModal(true);
+        Eliminar.setModal(true);
         Eliminar.pack();
         Eliminar.setLocationRelativeTo(this);
         Eliminar.setVisible(true);
@@ -1470,35 +1533,73 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-     
-        hadas.add(new Lamias(Integer.parseInt(tf_aleta_1.getText()), (int)sp_branquias_1.getValue(), tf_nombre_1.getText(), (int)sp_altura_1.getValue(), Integer.parseInt(tf_edad_1.getText()), Double.valueOf(tf_salud_1.getText()), Double.valueOf(tf_poder_1.getText())));
-        System.out.println(hadas);
+        try {
+          //  ap.getlistahadas().add(new Lamias(Integer.parseInt(tf_aleta_1.getText()), (int) sp_branquias_1.getValue(), tf_nombre_1.getText(), (int) sp_altura_1.getValue(), Integer.parseInt(tf_edad_1.getText()), Double.valueOf(tf_salud_1.getText()), Double.valueOf(tf_poder_1.getText())));
+            hadas.add(new Lamias(Integer.parseInt(tf_aleta_1.getText()), (int) sp_branquias_1.getValue(),
+                    tf_nombre_1.getText(), (int) sp_altura_1.getValue(), Integer.parseInt(tf_edad_1.getText()), 
+                    Double.valueOf(tf_salud_1.getText()), Double.valueOf(tf_poder_1.getText())));
+            System.out.println(hadas);
+            ap.setlistahadas(hadas);
+            JOptionPane.showMessageDialog(agregar, "Agrego exitosamente Lamias");
+            
+        } catch (Exception e) {
+            e.addSuppressed(e);
+            JOptionPane.showMessageDialog(agregar, "Ocurrio un error");
+        }
+
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        
-        hadas.add(new Hamadriades(Integer.parseInt(tf_arbol_2.getText()), Double.valueOf(tf_vidaarbol_2.getText()), tf_nombre_1.getText(), (int)sp_altura_1.getValue(), Integer.parseInt(tf_edad_1.getText()), Double.valueOf(tf_salud_1.getText()), Double.valueOf(tf_poder_1.getText())));
+
+        try {
+            ap.cargarArchivo();
+            hadas.add(new Hamadriades(Integer.parseInt(tf_arbol_2.getText()), Double.valueOf(tf_vidaarbol_2.getText()), tf_nombre_2.getText(), (int) sp_altura_2.getValue(), Integer.parseInt(tf_edad_2.getText()), Double.valueOf(tf_salud_2.getText()), Double.valueOf(tf_poder_2.getText())));
             System.out.println(hadas);
+            ap.setlistahadas(hadas);
+           
+            JOptionPane.showMessageDialog(agregar, "Agrego exitosamente Hamadriades");
+        } catch (Exception e) {
+            e.addSuppressed(e);
+            JOptionPane.showMessageDialog(agregar, "Ocurrio un error");
+        }
+
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
-                hadas.add(new Sifides((int)sp_alas_3.getValue(), tf_nombre_1.getText(), (int)sp_altura_1.getValue(), Integer.parseInt(tf_edad_1.getText()), Double.valueOf(tf_salud_1.getText()), Double.valueOf(tf_poder_1.getText())));
+        try {
+            ap.cargarArchivo();
+            hadas.add(new Sifides((int) sp_alas_3.getValue(), tf_nombre_3.getText(), (int) sp_altura_3.getValue(), Integer.parseInt(sp_edad_3.getText()), Double.valueOf(tf_salud_3.getText()), Double.valueOf(tf_poder_3.getText())));
 
-        System.out.println(hadas);
+            System.out.println(hadas);
+            ap.setlistahadas(hadas);
+            JOptionPane.showMessageDialog(agregar, "Agrego exitosamente Sifides");
+        } catch (Exception e) {
+            e.addSuppressed(e);
+            JOptionPane.showMessageDialog(agregar, "Ocurrio un error");
+        }
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-         hadas.add(new Salamandras((int)sp_alas_3.getValue(), tf_nombre_1.getText(), (int)sp_altura_1.getValue(), Integer.parseInt(tf_edad_1.getText()), Double.valueOf(tf_salud_1.getText()), Double.valueOf(tf_poder_1.getText())));
+        try {
+            ap.cargarArchivo();
+            hadas.add(new Salamandras((int) sp_alas_3.getValue(), tf_nombre_4.getText(), (int) sp_altura_4.getValue(), Integer.parseInt(tf_edad_4.getText()), Double.valueOf(tf_salud_4.getText()), Double.valueOf(tf_poder_4.getText())));
 
-        System.out.println(hadas);
+            System.out.println(hadas);
+            ap.setlistahadas(hadas);
+            JOptionPane.showMessageDialog(agregar, "Agrego exitosamente salamandra");
+        } catch (Exception e) {
+            e.addSuppressed(e);
+            JOptionPane.showMessageDialog(agregar, "Ocurrio un error");
+        }
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -1527,17 +1628,36 @@ public class Principal extends javax.swing.JFrame {
                 fw.close();
             } catch (Exception e) {
             }
+            JOptionPane.showMessageDialog(this, "nuevo Guardado con exito");
         }
-        
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        if (ap.getlistahadas().size()<hadas.size()) {
+        try {
             ap.setlistahadas(hadas);
             ap.escribirArchivo();
-        }
+        JOptionPane.showMessageDialog(this, "Guardado con exito");
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Ocurrio un error");
+            }
+            
+        
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+       // TODO add your handling code here:
+        About.setModal(true);
+        About.pack();
+        About.setLocationRelativeTo(this);
+        About.setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1575,6 +1695,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog About;
     private javax.swing.JDialog Eliminar;
     private javax.swing.JDialog Modificar;
     private javax.swing.JDialog agregar;
@@ -1592,6 +1713,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1695,6 +1817,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1704,6 +1827,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinner10;
     private javax.swing.JSpinner jSpinner11;
     private javax.swing.JSpinner jSpinner12;
@@ -1714,6 +1838,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
@@ -1760,9 +1885,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_salud_4;
     private javax.swing.JTextField tf_vidaarbol_2;
     // End of variables declaration//GEN-END:variables
- String path="./hadas.bin";
+ String path = "./hadas.bin";
     AdminHada ap = new AdminHada(path);
-   
-ArrayList <Hada> hadas = new ArrayList();
-    
+
+    ArrayList<Hada> hadas = new ArrayList();
+
 }

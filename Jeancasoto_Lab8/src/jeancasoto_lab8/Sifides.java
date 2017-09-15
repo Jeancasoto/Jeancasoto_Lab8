@@ -6,7 +6,7 @@
 package jeancasoto_lab8;
 
 
-public class Sifides extends Hada{
+public class Sifides extends Hada implements complementos{
    int alas;
 
     public Sifides() {
@@ -31,6 +31,11 @@ public class Sifides extends Hada{
 
     public void setAlas(int alas) {
         this.alas = alas;
+    }
+
+    @Override
+    public int pelea(Hada h1, Hada h2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
    

@@ -9,7 +9,7 @@ package jeancasoto_lab8;
  *
  * @author jeansoto
  */
-public class Lamias extends Hada{
+public class Lamias extends Hada implements complementos{
     int aleta;
     int branquias;
 
@@ -43,6 +43,11 @@ public class Lamias extends Hada{
 
     public void setBranquias(int branquias) {
         this.branquias = branquias;
+    }
+
+    @Override
+    public int pelea(Hada h1, Hada h2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

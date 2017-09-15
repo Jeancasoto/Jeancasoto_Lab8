@@ -9,7 +9,7 @@ package jeancasoto_lab8;
  *
  * @author jeansoto
  */
-public class Salamandras extends Hada{
+public class Salamandras extends Hada implements complementos{
    int alas;
 
     public Salamandras() {
@@ -33,6 +33,11 @@ public class Salamandras extends Hada{
 
     public void setAlas(int alas) {
         this.alas = alas;
+    }
+
+    @Override
+    public int pelea(Hada h1, Hada h2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
    

@@ -9,7 +9,7 @@ package jeancasoto_lab8;
  *
  * @author jeansoto
  */
-public class Hamadriades extends Hada{
+public class Hamadriades extends Hada implements complementos{
     int arbol;
     double vidaarbol;
 
@@ -45,6 +45,11 @@ public class Hamadriades extends Hada{
 
     public void setVidaarbol(double vidaarbol) {
         this.vidaarbol = vidaarbol;
+    }
+
+    @Override
+    public int pelea(Hada h1, Hada h2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
